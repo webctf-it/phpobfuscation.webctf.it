@@ -1,0 +1,1 @@
+curl --fail -s --resolve 'phpobfuscation.webctf.it:443:172.17.0.1' --data 'a=OT5mOn9xamp2IWVsJXcmaDZldns8NTQtMDQ1Onw1N2M%2BLTRrPDZ4OGAzMXV4NWFlN3pmNjwyLWAna3N2ZG0mYnNsIT9pOiI9ej8mOjU4cjxuOHc9NXhvcHYqPy1gPShuNjZwI34xPmQ%2FLnQgLCZ8OyY5LQ%3D%3D' https://phpobfuscation.webctf.it/.sbnbjius.php | grep -q 'flag{l4m3rs_wr1t3_w34k_0bfusc4t3d_b4ckd00rs}'

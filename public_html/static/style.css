@@ -1,0 +1,51 @@
+* {
+  cursor:url("mask.gif"), auto;
+}
+
+body {
+	padding: 2em;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-position: top;
+	background-color: black;
+	color: white;
+	font: normal 80% Verdana;
+	background: url(matrix.gif);
+}
+
+td {
+	font-family: verdana;
+	font-size: 20pt;
+	color: green
+}
+
+a {
+	font-family: verdana;
+	font-size: 20pt;
+	color: silver
+}
+
+.neon {
+	color: #FFFFFF;
+	text-shadow: 0 0 5px #1ab4e7, 0 0 10px #1ab4e7, 0 0 30px #18a2d0, 0 0 45px #18a2d0, 0 0 60px #18a2d0;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Orbitron-Bold'), url(https://fonts.gstatic.com/s/orbitron/v6/Y82YH_MJJWnsH2yUA5AuYY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2'), url(https://fonts.gstatic.com/s/orbitron/v6/Y82YH_MJJWnsH2yUA5AuYYbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+
+h1 {
+	color: #333;
+	font-size: 60px;
+	margin: 1px auto;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Orbitron;
+}
+
+font {
+	background-color: black;
+}
